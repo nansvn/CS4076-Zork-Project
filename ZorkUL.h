@@ -1,6 +1,6 @@
 #ifndef ZORKUL_H_
 #define ZORKUL_H_
-
+#include "character.h"
 #include "Command.h"
 #include "Parser.h"
 #include "Room.h"
@@ -11,6 +11,7 @@ using namespace std;
 
 class ZorkUL {
 private:
+    Character player;
 	Parser parser;
 	Room *currentRoom;
 	void createRooms();
@@ -26,6 +27,8 @@ public:
     ~ZorkUL();
 	void play();
 	string go(string direction);
+    Character &getPlayer();
 };
+
 
 #endif /*ZORKUL_H_*/

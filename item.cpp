@@ -28,6 +28,4 @@ int Item::getItemID(){
     return ID;
 }
 
-bool Item::isOwned() const{
-    return owned;
-}
+

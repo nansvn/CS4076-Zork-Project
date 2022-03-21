@@ -1,4 +1,8 @@
 #include <iostream>
+#include "ZorkUL.h"
+#include "character.h"
+#include "item.h"
+
 
 using namespace std;
 #include "ZorkUL.h"
@@ -23,14 +27,14 @@ void ZorkUL::createRooms()  {
 
     bedroom = new Room("bedroom","",true,1001);
         bedroom->addItem(new Item("Key", 1001, "A key"));
-    b = new Room("b","");
-    c = new Room("c","");
-    d = new Room("d","");
-    e = new Room("e","");
-    f = new Room("f","");
-    g = new Room("g","");
-    h = new Room("h","");
-    i = new Room("i","");
+    b = new Room("b","",true,2001);
+    c = new Room("c","",false);
+    d = new Room("d","",true,3001);
+    e = new Room("e","",false);
+    f = new Room("f","",false);
+    g = new Room("g","",false);
+    h = new Room("h","",true,4001);
+    i = new Room("i","",true,5001);
 
 //             (N, E, S, W)
     bedroom->setExits(f, b, d, c);
@@ -189,4 +193,9 @@ string ZorkUL::go(string direction) {
 		currentRoom = nextRoom;
         return currentRoom->getDescription();
 	}
+
+}
+
+Character &ZorkUL::getPlayer() {
+    return player;
 }

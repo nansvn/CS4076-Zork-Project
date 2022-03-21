@@ -9,7 +9,6 @@ using namespace std;
 using std::vector;
 
 
-
 class Room {
 
 private:
@@ -19,8 +18,7 @@ private:
     int keyID;
 	map<string, Room*> exits;
 	string exitString();
-    vector <Item> itemsInRoom;
-
+    vector <Item*> itemsInRoom;
 
 public:
     int numberOfItems();

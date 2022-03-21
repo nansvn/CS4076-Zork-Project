@@ -3,18 +3,18 @@
 #include<vector>
 using namespace std;
 
-Character::Character(string name) :
+Character::Character(string description) :
     moveHungerLose(20),actionHungerLose(10),teleportHungerCost(35)
 {
-    this->name  = name;
+    this->description  = description;
     this->hunger = 100;
     this->currentRoom = nullptr;
 }
 
 
-string Character::getName()
+string Character::getDescription()
 {
-    return name;
+    return description;
 }
 
 int Character::getHunger() const
@@ -28,9 +28,9 @@ Room *Character::getCurrentRoom()
 }
 
 
-void Character::setName(string name)
+void Character::setDescription(string description)
 {
-    this->name = name;
+    this->description = description;
 }
 
 void Character::setHunger(int hunger)
@@ -49,15 +49,45 @@ void Character::setCurrentRoom(Room *next)
 }
 
 
+
+
 void Character::addItem(Item *item){
-    backpack.addObject(item);
+    backpack.push_back(item);
 }
 
 
-void Character::removeItem(Item *item) {
-    backpack - item;
+void Character::removeItem(int ID) {
+    int i = 0;
+    for(vector<Item*>::iterator it = backpack.begin(); it != backpack.end(); it++)
+    {
+            if (i == ID)
+            {
+                delete *it;
+                backpack.erase(it);
+                break;
+            }
+            i++;
+    }
 }
 
-bool Character::hasItem(Item *item) {
-    return backpack.contains(item);
+void Character::removeItem(string name)
+{
+    for(vector<Item*>::iterator it = backpack.begin(); it != backpack.end(); it++)
+    {
+        if ((*it)->getItemName() == name)
+        {
+            delete *it;
+            backpack.erase(it);
+            break;
+        }
+    }
+}
+
+bool Character::hasItem(int ID) {
+    for (vector<Item*>::iterator it = backpack.begin(); it != backpack.end(); it++) {
+        if ((*it)->getItemID() == ID) {
+            return true;
+        }
+    }
+    return false;
 }

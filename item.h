@@ -22,6 +22,7 @@ public:
     string getItemName();
     string getItemDescription();
     int getItemID();
+    friend class Character;
 };
 
 

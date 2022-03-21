@@ -18,8 +18,7 @@ SOURCES += \
     food.cpp \
     item.cpp \
     main.cpp \
-    mainwindow.cpp \
-    objectcontainer.cpp
+    mainwindow.cpp
 
 HEADERS += \
     Command.h \
@@ -30,8 +29,7 @@ HEADERS += \
     character.h \
     food.h \
     item.h \
-    mainwindow.h \
-    objectcontainer.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

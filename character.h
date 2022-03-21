@@ -4,7 +4,6 @@
 #include <QObject>
 #include<string>
 #include<vector>
-
 #include "item.h"
 #include "Room.h"
 #include "objectcontainer.h"
@@ -17,10 +16,10 @@ class Character:public QObject
     Q_OBJECT;
 
 private:
-    string name;
+    string description;
     int hunger;
     Room *currentRoom;
-    ObjectContainer<Item*> backpack;
+    vector <Item*> backpack;
 
     const int moveHungerLose;
     const int actionHungerLose;
@@ -28,18 +27,20 @@ private:
 
 
 public:
-    Character(string name);
+    Character(string description);
     ~Character();
 
-    string getName();
+    string getDescription();
     int getHunger() const;
     Room *getCurrentRoom();
 
     void addItem(Item *item);
-    void removeItem(Item *item);
-    bool hasItem(Item *item);
+    void removeItem(int ID);
+    void removeItem(string name);
+    bool hasItem(int ID);
 
-    void setName(string name);
+
+    void setDescription(string description);
     void setHunger(int hunger);
     void setCurrentRoom(Room *next);
 
