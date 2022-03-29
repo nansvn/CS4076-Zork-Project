@@ -2,38 +2,38 @@
 #define ROOM_H_
 
 #include <map>
-#include <string>
+#include <QString>
 #include <vector>
 #include "item.h"
+#include <QPixmap>
 using namespace std;
 using std::vector;
-
 
 class Room {
 
 private:
-	string description;
+    string description;
     string path;
+    map<string, Room*> exits;
+    vector <Item> itemsInRoom;
+    string exitstring();
     bool locked;
-    int keyID;
-	map<string, Room*> exits;
-	string exitString();
-    vector <Item*> itemsInRoom;
 
 public:
     int numberOfItems();
-    Room(string description,string path, bool locked);
-    Room(string description,string path, bool locked,int keyID);
+    Room(string description);
+    Room(string description,string path,bool locked=false);
 	void setExits(Room *north, Room *east, Room *south, Room *west);
-    bool isLocked();
-    void setLocked(bool locked);
-    bool openDoor(Item item);
-    string getDescription();
-	Room* nextRoom(string direction);
+    string shortDescription();
+    string longDescription();
+    Room* nextRoom(string direction);
     void addItem(Item *inItem);
     string displayItem();
-    int isItemInRoom(string inString);
+    int isItemInRoom(string instring);
     void removeItemFromRoom(int location);
+    Item& getItem(int item);
+    bool isLocked();
+    void setLocked(bool locked);
 };
 
 #endif
