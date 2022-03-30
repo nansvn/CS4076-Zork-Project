@@ -47,7 +47,7 @@ HEADERS += \
     wordle.h
 
 FORMS += \
-        mainwindow.ui \
+    mainwindow.ui \
     bossmode.ui\
     wordle.ui
 
