@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>wordle</class>
+ <widget class="QWidget" name="wordle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>743</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>wordle</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>501</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_2"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_3"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_4"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_5"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>10</y>
+     <width>281</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Guess a word</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>90</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>680</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>The answer is</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>690</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>190</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>180</y>
+     <width>501</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QTextEdit" name="textEdit_6"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_7"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_8"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_9"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_10"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>290</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>280</y>
+     <width>501</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QTextEdit" name="textEdit_11"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_12"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_13"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_14"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_15"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>390</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>380</y>
+     <width>501</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QTextEdit" name="textEdit_16"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_17"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_18"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_19"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_20"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>490</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>480</y>
+     <width>501</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QTextEdit" name="textEdit_21"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_22"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_23"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_24"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_25"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>590</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>580</y>
+     <width>501</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QTextEdit" name="textEdit_26"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_27"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_28"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_29"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_30"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
