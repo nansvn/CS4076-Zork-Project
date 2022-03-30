@@ -17,7 +17,7 @@ wordle::wordle(QWidget *parent)
     , ui(new Ui::wordle)
 {
     setWindowTitle("Wordle Challenge");
-    this->setFixedSize( this->width (),this->height ());
+    this->setFixedSize(770,750);
     ui->setupUi(this);
 
     ui->textEdit->setFocus();
@@ -1621,8 +1621,8 @@ void wordle::win6()
     }
     else
     {
-        QMessageBox::information(this,"Result","You lost the game! Your ");
         ui->label_3->setText(qwords);
+        QMessageBox::information(this,"Result","You lost the game!");
         Line6();
     }
 }

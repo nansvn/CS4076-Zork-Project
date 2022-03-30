@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/Boss">
+        <file>Image/Doom.jpg</file>
+        <file>Image/Nevermore.jpg</file>
+        <file>Image/Spe.jpg</file>
+        <file>Image/QOP.png</file>
+        <file>Image/TB.jpg</file>
+        <file>Image/Balana.jpg</file>
+        <file>Image/CK.jpg</file>
+        <file>Image/HN.png</file>
+        <file>Image/loa.jpg</file>
+        <file>Image/SD.png</file>
+    </qresource>
+    <qresource prefix="/Hero">
+        <file>Image/DH.jpg</file>
+        <file>Image/background.png</file>
+    </qresource>
+    <qresource prefix="/Backgroud"/>
+</RCC>

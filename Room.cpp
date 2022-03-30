@@ -8,12 +8,6 @@ Room::Room(string description) {
     room_ptr = this;
 }
 
-Room::Room(string description,string path,bool locked)
-    : description{description}, path{path}, locked{locked}
-{
-
-}
-
 void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
 	if (north != NULL)
 		exits["north"] = north;
@@ -30,7 +24,7 @@ string Room::shortDescription() {
 }
 
 string Room::longDescription() {
-    return "room = " + description + ".\n" + displayItem() + exitstring();
+    return "You are in room " + description + ".\n" + displayItem() + exitstring();
 }
 
 string Room::exitstring() {
@@ -42,11 +36,10 @@ string Room::exitstring() {
 }
 
 Room* Room::nextRoom(string direction) {
-    map<string, Room*>::iterator next = exits.find(direction); //returns an iterator for the "pair"
+    map<string, Room*>::iterator next = exits.find(direction);
 	if (next == exits.end())
-		return NULL; // if exits.end() was returned, there's no room in that direction.
-	return next->second; // If there is a room, remove the "second" (Room*)
-                // part of the "pair" (<string, Room*>) and return it.
+        return NULL;
+    return next->second;
 }
 
 void Room::addItem(Item *inItem) {
@@ -56,10 +49,10 @@ void Room::addItem(Item *inItem) {
 }
 
 string Room::displayItem() {
-    string tempstring = "BOSS is ";
+    string tempstring = "The boss of this room is ";
     int sizeItems = (itemsInRoom.size());
     if (itemsInRoom.size() < 1) {
-        tempstring = "no BOSS in room";
+        tempstring = "There is no enemy in the room";
         }
     else if (itemsInRoom.size() > 0) {
        int x = (0);
@@ -84,7 +77,6 @@ int Room::isItemInRoom(string instring)
     else if (itemsInRoom.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            // compare instring with short description
             int tempFlag = instring.compare( itemsInRoom[x].getShortDescription());
             if (tempFlag == 0) {
                 itemsInRoom.erase(itemsInRoom.begin()+x);
@@ -96,14 +88,3 @@ int Room::isItemInRoom(string instring)
     return -1;
 }
 
-Item& Room::getItem(int index){
-    return itemsInRoom[index];
-}
-
-bool Room::isLocked(){
-    return locked;
-}
-
-void Room::setLocked(bool locked){
-    this->locked = locked;
-}
