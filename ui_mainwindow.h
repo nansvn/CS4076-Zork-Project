@@ -53,7 +53,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1054, 665);
+        MainWindow->resize(1049, 689);
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         actionExit->setCheckable(false);
@@ -74,8 +74,10 @@ public:
         pushButton_walk->setGeometry(QRect(750, 330, 231, 51));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 350, 331, 251));
+        label_2->setGeometry(QRect(20, 340, 301, 281));
         label_2->setPixmap(QPixmap(QString::fromUtf8("Image/DH.jpg")));
+        label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        label_2->setIndent(0);
         gridLayoutWidget = new QWidget(centralWidget);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(370, 360, 351, 211));
@@ -127,7 +129,7 @@ public:
         pushButton_wordle->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1054, 27));
+        menuBar->setGeometry(QRect(0, 0, 1049, 27));
         menuGame = new QMenu(menuBar);
         menuGame->setObjectName(QString::fromUtf8("menuGame"));
         MainWindow->setMenuBar(menuBar);
