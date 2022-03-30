@@ -15,7 +15,10 @@ public:
 
     /*图片的路径*/
 
-    char* images[10] = {":/Boss/Image/Doom.jpg",":/Boss/Image/Nevermore.jpg",":/Boss/Image/Spe.jpg",":/Boss/Image/Balana.jpg",":/Boss/Image/CK.jpg",":/Boss/Image/HN.png",":/Boss/Image/loa.jpg",":/Boss/Image/QOP.png",":/Boss/Image/SD.png",":/Boss/Image/TB.jpg"};
+    char* images[10] = {":/Background/Image/1.jpg",":/Background/Image/2.jpg",":/Background/Image/3.jpg",
+                        ":/Background/Image/4.jpg",":/Background/Image/5.jpg",":/Background/Image/6.jpg",
+                        ":/Background/Image/7.jpg",":/Background/Image/8.jpg",":/Background/Image/9.jpg",
+                        ":/Background/Image/10.jpg"};
 
     int index;
 
