@@ -19,8 +19,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //show player
     QPixmap pix;
     QImage hero(":/Hero/Image/DH.jpg");//filename，图片的路径名字
-    ui->label_2->setPixmap(pix.fromImage(hero));// ui->pix就是label的控件名字
-    ui->label_2->setScaledContents(true);
+// ui->pix就是label的控件名字
+    QImage hero2 = hero.scaled(300, 280, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ui->label_2->setPixmap(pix.fromImage(hero2));
     ui->label_2->show();
 
 }

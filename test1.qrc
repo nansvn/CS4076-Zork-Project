@@ -8,12 +8,22 @@
         <file>Image/Balana.jpg</file>
         <file>Image/CK.jpg</file>
         <file>Image/HN.png</file>
-        <file>Image/loa.jpg</file>
         <file>Image/SD.png</file>
     </qresource>
     <qresource prefix="/Hero">
         <file>Image/DH.jpg</file>
         <file>Image/background.png</file>
     </qresource>
-    <qresource prefix="/Backgroud"/>
+    <qresource prefix="/Background">
+        <file>Image/1.jpg</file>
+        <file>Image/2.jpg</file>
+        <file>Image/3.jpg</file>
+        <file>Image/4.jpg</file>
+        <file>Image/5.jpg</file>
+        <file>Image/6.jpg</file>
+        <file>Image/7.jpg</file>
+        <file>Image/8.jpg</file>
+        <file>Image/9.jpg</file>
+        <file>Image/10.jpg</file>
+    </qresource>
 </RCC>
