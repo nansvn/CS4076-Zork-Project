@@ -2,8 +2,8 @@
 #define CHARACTER_H_
 
 #include "item.h"
-
 #include <string>
+
 using namespace std;
 #include <vector>
 using std::vector;

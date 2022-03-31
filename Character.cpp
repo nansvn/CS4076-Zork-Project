@@ -1,5 +1,5 @@
 #include "Character.h"
-#include "follower.h"
+#include "Entourage.h"
 Character *character_ptr;
 
 Character::Character(string description) {
