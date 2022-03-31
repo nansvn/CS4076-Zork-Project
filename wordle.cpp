@@ -1159,7 +1159,7 @@ void wordle::on_pushButton_4_clicked()
     string tt3=ui->textEdit_18->toPlainText().toStdString();
     string tt4=ui->textEdit_19->toPlainText().toStdString();
     string tt5=ui->textEdit_20->toPlainText().toStdString();
-    char uu1[1];//textedit上的字母
+    char uu1[1];
     strncpy(uu1, tt1.c_str(),1);
     char uu2[1];
     strncpy(uu2, tt2.c_str(),1);
@@ -1423,7 +1423,7 @@ void wordle::on_pushButton_6_clicked()
     string tt3=ui->textEdit_28->toPlainText().toStdString();
     string tt4=ui->textEdit_29->toPlainText().toStdString();
     string tt5=ui->textEdit_30->toPlainText().toStdString();
-    char uu1[1];//textedit上的字母
+    char uu1[1];
     strncpy(uu1, tt1.c_str(),1);
     char uu2[1];
     strncpy(uu2, tt2.c_str(),1);

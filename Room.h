@@ -14,18 +14,21 @@ private:
     string description;
     map<string, Room*> exits;
     string exitstring();
-//    vector <Item> itemsInRoom;
-
+    int index=0;
+    string detail;
 
 public:
-
     vector <Item> itemsInRoom;
-
+    int getIndex();
     int numberOfItems();
-    Room(string description);
+    Room();
+    Room(string description, int index);
+    Room(string description, int index, string detail);
+    Room(const Room &room);    /*Deep Copy Constructor*/
 	void setExits(Room *north, Room *east, Room *south, Room *west);
     string shortDescription();
     string longDescription();
+    string location();
     Room* nextRoom(string direction);
     void addItem(Item *inItem);
     string displayItem();

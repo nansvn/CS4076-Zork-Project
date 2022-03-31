@@ -71,8 +71,8 @@ public:
     QTextEdit *textEdit_26;
     QTextEdit *textEdit_27;
     QTextEdit *textEdit_28;
-    QTextEdit *textEdit_29;
     QTextEdit *textEdit_30;
+    QTextEdit *textEdit_29;
 
     void setupUi(QWidget *wordle)
     {
@@ -87,53 +87,61 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         textEdit = new QTextEdit(horizontalLayoutWidget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        QFont font;
+        font.setPointSize(36);
+        font.setBold(true);
+        textEdit->setFont(font);
 
         horizontalLayout->addWidget(textEdit);
 
         textEdit_2 = new QTextEdit(horizontalLayoutWidget);
         textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
+        textEdit_2->setFont(font);
 
         horizontalLayout->addWidget(textEdit_2);
 
         textEdit_3 = new QTextEdit(horizontalLayoutWidget);
         textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
+        textEdit_3->setFont(font);
 
         horizontalLayout->addWidget(textEdit_3);
 
         textEdit_4 = new QTextEdit(horizontalLayoutWidget);
         textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
+        textEdit_4->setFont(font);
 
         horizontalLayout->addWidget(textEdit_4);
 
         textEdit_5 = new QTextEdit(horizontalLayoutWidget);
         textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
+        textEdit_5->setFont(font);
 
         horizontalLayout->addWidget(textEdit_5);
 
         label = new QLabel(wordle);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(250, 10, 281, 51));
-        QFont font;
-        font.setPointSize(20);
-        font.setBold(true);
-        label->setFont(font);
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        label->setFont(font1);
         pushButton = new QPushButton(wordle);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(620, 90, 101, 51));
         label_2 = new QLabel(wordle);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(180, 690, 211, 41));
-        QFont font1;
-        font1.setPointSize(16);
-        font1.setBold(true);
-        label_2->setFont(font1);
+        QFont font2;
+        font2.setPointSize(16);
+        font2.setBold(true);
+        label_2->setFont(font2);
         label_3 = new QLabel(wordle);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(390, 690, 141, 41));
-        QFont font2;
-        font2.setPointSize(14);
-        font2.setBold(true);
-        label_3->setFont(font2);
+        QFont font3;
+        font3.setPointSize(14);
+        font3.setBold(true);
+        label_3->setFont(font3);
         pushButton_2 = new QPushButton(wordle);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(620, 190, 101, 51));
@@ -145,26 +153,31 @@ public:
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         textEdit_6 = new QTextEdit(horizontalLayoutWidget_2);
         textEdit_6->setObjectName(QString::fromUtf8("textEdit_6"));
+        textEdit_6->setFont(font);
 
         horizontalLayout_2->addWidget(textEdit_6);
 
         textEdit_7 = new QTextEdit(horizontalLayoutWidget_2);
         textEdit_7->setObjectName(QString::fromUtf8("textEdit_7"));
+        textEdit_7->setFont(font);
 
         horizontalLayout_2->addWidget(textEdit_7);
 
         textEdit_8 = new QTextEdit(horizontalLayoutWidget_2);
         textEdit_8->setObjectName(QString::fromUtf8("textEdit_8"));
+        textEdit_8->setFont(font);
 
         horizontalLayout_2->addWidget(textEdit_8);
 
         textEdit_9 = new QTextEdit(horizontalLayoutWidget_2);
         textEdit_9->setObjectName(QString::fromUtf8("textEdit_9"));
+        textEdit_9->setFont(font);
 
         horizontalLayout_2->addWidget(textEdit_9);
 
         textEdit_10 = new QTextEdit(horizontalLayoutWidget_2);
         textEdit_10->setObjectName(QString::fromUtf8("textEdit_10"));
+        textEdit_10->setFont(font);
 
         horizontalLayout_2->addWidget(textEdit_10);
 
@@ -179,26 +192,31 @@ public:
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
         textEdit_11 = new QTextEdit(horizontalLayoutWidget_3);
         textEdit_11->setObjectName(QString::fromUtf8("textEdit_11"));
+        textEdit_11->setFont(font);
 
         horizontalLayout_3->addWidget(textEdit_11);
 
         textEdit_12 = new QTextEdit(horizontalLayoutWidget_3);
         textEdit_12->setObjectName(QString::fromUtf8("textEdit_12"));
+        textEdit_12->setFont(font);
 
         horizontalLayout_3->addWidget(textEdit_12);
 
         textEdit_13 = new QTextEdit(horizontalLayoutWidget_3);
         textEdit_13->setObjectName(QString::fromUtf8("textEdit_13"));
+        textEdit_13->setFont(font);
 
         horizontalLayout_3->addWidget(textEdit_13);
 
         textEdit_14 = new QTextEdit(horizontalLayoutWidget_3);
         textEdit_14->setObjectName(QString::fromUtf8("textEdit_14"));
+        textEdit_14->setFont(font);
 
         horizontalLayout_3->addWidget(textEdit_14);
 
         textEdit_15 = new QTextEdit(horizontalLayoutWidget_3);
         textEdit_15->setObjectName(QString::fromUtf8("textEdit_15"));
+        textEdit_15->setFont(font);
 
         horizontalLayout_3->addWidget(textEdit_15);
 
@@ -213,26 +231,31 @@ public:
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         textEdit_16 = new QTextEdit(horizontalLayoutWidget_4);
         textEdit_16->setObjectName(QString::fromUtf8("textEdit_16"));
+        textEdit_16->setFont(font);
 
         horizontalLayout_4->addWidget(textEdit_16);
 
         textEdit_17 = new QTextEdit(horizontalLayoutWidget_4);
         textEdit_17->setObjectName(QString::fromUtf8("textEdit_17"));
+        textEdit_17->setFont(font);
 
         horizontalLayout_4->addWidget(textEdit_17);
 
         textEdit_18 = new QTextEdit(horizontalLayoutWidget_4);
         textEdit_18->setObjectName(QString::fromUtf8("textEdit_18"));
+        textEdit_18->setFont(font);
 
         horizontalLayout_4->addWidget(textEdit_18);
 
         textEdit_19 = new QTextEdit(horizontalLayoutWidget_4);
         textEdit_19->setObjectName(QString::fromUtf8("textEdit_19"));
+        textEdit_19->setFont(font);
 
         horizontalLayout_4->addWidget(textEdit_19);
 
         textEdit_20 = new QTextEdit(horizontalLayoutWidget_4);
         textEdit_20->setObjectName(QString::fromUtf8("textEdit_20"));
+        textEdit_20->setFont(font);
 
         horizontalLayout_4->addWidget(textEdit_20);
 
@@ -247,26 +270,31 @@ public:
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
         textEdit_21 = new QTextEdit(horizontalLayoutWidget_5);
         textEdit_21->setObjectName(QString::fromUtf8("textEdit_21"));
+        textEdit_21->setFont(font);
 
         horizontalLayout_5->addWidget(textEdit_21);
 
         textEdit_22 = new QTextEdit(horizontalLayoutWidget_5);
         textEdit_22->setObjectName(QString::fromUtf8("textEdit_22"));
+        textEdit_22->setFont(font);
 
         horizontalLayout_5->addWidget(textEdit_22);
 
         textEdit_23 = new QTextEdit(horizontalLayoutWidget_5);
         textEdit_23->setObjectName(QString::fromUtf8("textEdit_23"));
+        textEdit_23->setFont(font);
 
         horizontalLayout_5->addWidget(textEdit_23);
 
         textEdit_24 = new QTextEdit(horizontalLayoutWidget_5);
         textEdit_24->setObjectName(QString::fromUtf8("textEdit_24"));
+        textEdit_24->setFont(font);
 
         horizontalLayout_5->addWidget(textEdit_24);
 
         textEdit_25 = new QTextEdit(horizontalLayoutWidget_5);
         textEdit_25->setObjectName(QString::fromUtf8("textEdit_25"));
+        textEdit_25->setFont(font);
 
         horizontalLayout_5->addWidget(textEdit_25);
 
@@ -281,28 +309,33 @@ public:
         horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
         textEdit_26 = new QTextEdit(horizontalLayoutWidget_6);
         textEdit_26->setObjectName(QString::fromUtf8("textEdit_26"));
+        textEdit_26->setFont(font);
 
         horizontalLayout_6->addWidget(textEdit_26);
 
         textEdit_27 = new QTextEdit(horizontalLayoutWidget_6);
         textEdit_27->setObjectName(QString::fromUtf8("textEdit_27"));
+        textEdit_27->setFont(font);
 
         horizontalLayout_6->addWidget(textEdit_27);
 
         textEdit_28 = new QTextEdit(horizontalLayoutWidget_6);
         textEdit_28->setObjectName(QString::fromUtf8("textEdit_28"));
+        textEdit_28->setFont(font);
 
         horizontalLayout_6->addWidget(textEdit_28);
 
-        textEdit_29 = new QTextEdit(horizontalLayoutWidget_6);
-        textEdit_29->setObjectName(QString::fromUtf8("textEdit_29"));
-
-        horizontalLayout_6->addWidget(textEdit_29);
-
         textEdit_30 = new QTextEdit(horizontalLayoutWidget_6);
         textEdit_30->setObjectName(QString::fromUtf8("textEdit_30"));
+        textEdit_30->setFont(font);
 
         horizontalLayout_6->addWidget(textEdit_30);
+
+        textEdit_29 = new QTextEdit(horizontalLayoutWidget_6);
+        textEdit_29->setObjectName(QString::fromUtf8("textEdit_29"));
+        textEdit_29->setFont(font);
+
+        horizontalLayout_6->addWidget(textEdit_29);
 
 
         retranslateUi(wordle);
@@ -313,6 +346,11 @@ public:
     void retranslateUi(QWidget *wordle)
     {
         wordle->setWindowTitle(QCoreApplication::translate("wordle", "wordle", nullptr));
+        textEdit->setHtml(QCoreApplication::translate("wordle", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:36pt; font-weight:700; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         label->setText(QCoreApplication::translate("wordle", "Guess a word", nullptr));
         pushButton->setText(QCoreApplication::translate("wordle", "Check", nullptr));
         label_2->setText(QCoreApplication::translate("wordle", "The answer is", nullptr));

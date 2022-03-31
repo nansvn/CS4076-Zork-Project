@@ -37,32 +37,32 @@ public:
         BossMode->resize(651, 706);
         textEdit = new QTextEdit(BossMode);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(10, 20, 631, 451));
+        textEdit->setGeometry(QRect(10, 330, 621, 251));
         textEdit->setStyleSheet(QString::fromUtf8("QTextEdit {background-color:rgb(255,132,139,0); broder-radius:3px;color:rbg(0,0,0);}|"));
         progressBar_BossHealth = new QProgressBar(BossMode);
         progressBar_BossHealth->setObjectName(QString::fromUtf8("progressBar_BossHealth"));
-        progressBar_BossHealth->setGeometry(QRect(10, 620, 211, 21));
+        progressBar_BossHealth->setGeometry(QRect(310, 600, 271, 21));
         progressBar_BossHealth->setValue(0);
         progressBar_PlayerHealth = new QProgressBar(BossMode);
         progressBar_PlayerHealth->setObjectName(QString::fromUtf8("progressBar_PlayerHealth"));
-        progressBar_PlayerHealth->setGeometry(QRect(10, 650, 211, 21));
+        progressBar_PlayerHealth->setGeometry(QRect(310, 630, 271, 21));
         progressBar_PlayerHealth->setMaximum(1000);
         progressBar_PlayerHealth->setValue(0);
         progressBar_PlayerStamina = new QProgressBar(BossMode);
         progressBar_PlayerStamina->setObjectName(QString::fromUtf8("progressBar_PlayerStamina"));
-        progressBar_PlayerStamina->setGeometry(QRect(10, 680, 211, 21));
+        progressBar_PlayerStamina->setGeometry(QRect(310, 660, 271, 21));
         progressBar_PlayerStamina->setMaximum(1000);
         progressBar_PlayerStamina->setValue(0);
         AttackButton = new QPushButton(BossMode);
         AttackButton->setObjectName(QString::fromUtf8("AttackButton"));
-        AttackButton->setGeometry(QRect(10, 570, 101, 41));
+        AttackButton->setGeometry(QRect(20, 630, 101, 41));
         pushButton = new QPushButton(BossMode);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(119, 570, 101, 41));
+        pushButton->setGeometry(QRect(130, 630, 101, 41));
         label = new QLabel(BossMode);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(280, 500, 281, 191));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/Boos/Image/QOP.png")));
+        label->setGeometry(QRect(10, 0, 621, 321));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Boss/Image/Balana.jpg")));
 
         retranslateUi(BossMode);
 
@@ -73,7 +73,7 @@ public:
     {
         BossMode->setWindowTitle(QCoreApplication::translate("BossMode", "Form", nullptr));
         AttackButton->setText(QCoreApplication::translate("BossMode", "Attack", nullptr));
-        pushButton->setText(QCoreApplication::translate("BossMode", "Next Boss", nullptr));
+        pushButton->setText(QCoreApplication::translate("BossMode", "Next", nullptr));
         label->setText(QString());
     } // retranslateUi
 

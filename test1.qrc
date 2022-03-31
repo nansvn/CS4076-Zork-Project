@@ -9,10 +9,7 @@
         <file>Image/CK.jpg</file>
         <file>Image/HN.png</file>
         <file>Image/SD.png</file>
-    </qresource>
-    <qresource prefix="/Hero">
-        <file>Image/DH.jpg</file>
-        <file>Image/background.png</file>
+        <file>Image/vampire.jpg</file>
     </qresource>
     <qresource prefix="/Background">
         <file>Image/1.jpg</file>
@@ -25,5 +22,6 @@
         <file>Image/8.jpg</file>
         <file>Image/9.jpg</file>
         <file>Image/10.jpg</file>
+        <file>Image/background.png</file>
     </qresource>
 </RCC>

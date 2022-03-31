@@ -2,10 +2,34 @@
 
 Room *room_ptr;
 
-Room::Room(string description) {
-	this->description = description;
+/*default parameters*/
+Room::Room()
+    :description{""},index{0},detail{""}
+{};
 
+Room::Room(string description,int index) {
+    this->description = description;
+    this->index = index;
     room_ptr = this;
+}
+
+Room::Room(string description,int index, string detail) {
+    this->description = description;
+    this->index = index;
+    this->detail = detail;
+    room_ptr = this;
+}
+
+/*Deep Copy Constructor*/
+Room::Room(const Room &room){
+    description = room.description;
+    index = room.index;
+    detail = room.detail;
+}
+
+
+int Room::getIndex() {
+    return this->index;
 }
 
 void Room::setExits(Room *north, Room *east, Room *south, Room *west) {
@@ -24,14 +48,17 @@ string Room::shortDescription() {
 }
 
 string Room::longDescription() {
-    return "You are in room " + description + ".\n" + displayItem() + exitstring();
+    return "\nYou are at the [" + description + "] now\n" + detail + displayItem() + exitstring();
+}
+
+string Room::location() {
+    return "\nYour current location is [" + description + "] \n";
 }
 
 string Room::exitstring() {
-    string returnstring = "\nexits =";
+    string returnstring = "\nExits =";
     for (map<string, Room*>::iterator i = exits.begin(); i != exits.end(); i++)
-		// Loop through map
-        returnstring += "  " + i->first;	// access the "first" element of the pair (direction as a string)
+        returnstring += "  " + i->first;
     return returnstring + "\n";
 }
 
@@ -43,21 +70,19 @@ Room* Room::nextRoom(string direction) {
 }
 
 void Room::addItem(Item *inItem) {
-    //cout <<endl;
-    //cout << "Just added" + inItem->getLongDescription();
     itemsInRoom.push_back(*inItem);
 }
 
 string Room::displayItem() {
-    string tempstring = "The boss of this room is ";
+    string tempstring = "A demon has taken over the room";
     int sizeItems = (itemsInRoom.size());
     if (itemsInRoom.size() < 1) {
-        tempstring = "There is no enemy in the room";
+        tempstring = "A quite room.";
         }
     else if (itemsInRoom.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            tempstring = tempstring + itemsInRoom[x].getShortDescription() + "\n" + itemsInRoom[x].getOtherInfo();
+            tempstring = tempstring + "\n    Name: " +itemsInRoom[x].getShortDescription() + "\n" + itemsInRoom[x].getOtherInfo();
             x++;
             }
         }
