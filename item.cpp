@@ -47,16 +47,16 @@ string Item::getLongDescription()
 
 string Item::getOtherInfo()
 {
-    //int -> string
     std::string health_str = std::to_string(health);
     std::string stamina_str = std::to_string(stamina);
     std::string attack_str = std::to_string(attack);
     if(stamina == 0)//BOSS
-        return "Health: " + health_str + "\n" + "Attack: " + attack_str;
+        return "    Health: " + health_str + "\n" + "    Attack: " + attack_str;
     else//Character
-        return "Health:  " + health_str + "\n" + "Stamina: " + stamina_str + "\n" + "Attack:  " + attack_str;
+        return "    Health: " + health_str + "\n" + "    Stamina: " + stamina_str + "\n" + "    Attack: " + attack_str;
 }
-Item operator +(const Item &A, const Item &B)
+
+Item operator + (const Item &A, const Item &B)
 {
     Item *item = new Item(A.description, A.health, A.stamina, A.attack);
     item->health += B.health;

@@ -24,7 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-    follower.cpp \
+    Entourage.cpp \
     main.cpp \
     mainwindow.cpp \
     Character.cpp \
@@ -36,7 +36,7 @@ SOURCES += \
     wordle.cpp
 
 HEADERS += \
-    follower.h \
+    Entourage.h \
     mainwindow.h \
     Character.h \
     item.h \

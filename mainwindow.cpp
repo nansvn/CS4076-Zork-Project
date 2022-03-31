@@ -12,18 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(1050,665);
+    this->setFixedSize(1004,670);
     createRooms();
     printWelcome();
-
-    //show player
-    QPixmap pix;
-    QImage hero(":/Hero/Image/DH.jpg");//filename，图片的路径名字
-// ui->pix就是label的控件名字
-    QImage hero2 = hero.scaled(300, 280, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    ui->label_2->setPixmap(pix.fromImage(hero2));
-    ui->label_2->show();
-
 }
 
 MainWindow::~MainWindow()
@@ -42,7 +33,10 @@ void MainWindow::on_pushButton_west_clicked()
         currentRoom = nextRoom;
         QString qstr = QString::fromStdString(currentRoom->longDescription());
         ui->textEdit->append(qstr);
-        //ui->textEdit->append(currentRoom->longDescription());
+        QPixmap pixmap(ic.ChangeImage(currentRoom->getIndex()));
+        ui->label->setPixmap(pixmap);
+        ui->label->setScaledContents(true);
+        ui->label->show();
     }
 }
 
@@ -57,6 +51,10 @@ void MainWindow::on_pushButton_north_clicked()
         currentRoom = nextRoom;
         QString qstr = QString::fromStdString(currentRoom->longDescription());
         ui->textEdit->append(qstr);
+        QPixmap pixmap(ic.ChangeImage(currentRoom->getIndex()));
+        ui->label->setPixmap(pixmap);
+        ui->label->setScaledContents(true);
+        ui->label->show();
     }
 }
 
@@ -71,6 +69,10 @@ void MainWindow::on_pushButton_south_clicked()
         currentRoom = nextRoom;
         QString qstr = QString::fromStdString(currentRoom->longDescription());
         ui->textEdit->append(qstr);
+        QPixmap pixmap(ic.ChangeImage(currentRoom->getIndex()));
+        ui->label->setPixmap(pixmap);
+        ui->label->setScaledContents(true);
+        ui->label->show();
     }
 }
 
@@ -85,6 +87,10 @@ void MainWindow::on_pushButton_east_clicked()
         currentRoom = nextRoom;
         QString qstr = QString::fromStdString(currentRoom->longDescription());
         ui->textEdit->append(qstr);
+        QPixmap pixmap(ic.ChangeImage(currentRoom->getIndex()));
+        ui->label->setPixmap(pixmap);
+        ui->label->setScaledContents(true);
+        ui->label->show();
     }
 }
 
@@ -93,29 +99,37 @@ void MainWindow::on_pushButton_tele_clicked()
 {
     srand((int)time(0));
     int t = rand() % 10;
-    //int -> string -> qstring
-    std::string t_str = std::to_string(t);
-    QString t_qstr = QString::fromStdString(t_str);
-
-    ui->textEdit->append("\nYou use the teleportation spell and are teleported to somewhere");
-    ui->textEdit->append("You are currently in room " + t_qstr);
-
     currentRoom = room[t];
+    QString t_qstr = QString::fromStdString(currentRoom->shortDescription());
+
+    ui->textEdit->append("\nYou use the teleportation spell. Everything in front of you fades");
+    ui->textEdit->append("After a few minutes, you are awake and find yourself standing at the center of [" + t_qstr + "]");
+
+
     QString qstr = QString::fromStdString(currentRoom->longDescription());
     ui->textEdit->append(qstr);
+    QPixmap pixmap(ic.ChangeImage(currentRoom->getIndex()));
+    ui->label->setPixmap(pixmap);
+    ui->label->setScaledContents(true);
+    ui->label->show();
 }
 
 //MAP
 void MainWindow::on_pushButton_map_clicked()
 {
-    ui->textEdit->append("The map is: ");
-    ui->textEdit->append("[h] --- [f] --- [g]        ");
-    ui->textEdit->append("         |                 ");
-    ui->textEdit->append("         |                 ");
-    ui->textEdit->append("[c] --- [a] --- [b] --- [j]");
-    ui->textEdit->append("         |                 ");
-    ui->textEdit->append("         |                 ");
-    ui->textEdit->append("[i] --- [d] --- [e]        ");
+    ui->textEdit->append("\nYou reach in your bag and take out a map");
+    ui->textEdit->append("                          [Throne]        ");
+    ui->textEdit->append("                              |        ");
+    ui->textEdit->append("                              |        ");
+    ui->textEdit->append("[Forest] ----- [Barbican] --- [Kitchen]");
+    ui->textEdit->append("                              |                 ");
+    ui->textEdit->append("                              |                 ");
+    ui->textEdit->append("[Storage] --- [Chamber] --- [Dungeon]");
+    ui->textEdit->append("                              |                 ");
+    ui->textEdit->append("                              |                 ");
+    ui->textEdit->append("[Courtyard] -- [Prison] --- [Library]");
+    QString qstr = QString::fromStdString(currentRoom->location());
+    ui->textEdit->append(qstr);
 }
 
 
@@ -124,16 +138,16 @@ void MainWindow::on_pushButton_map_clicked()
 void MainWindow::createRooms()  {
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
 
-    a = new Room("a");
-    b = new Room("b");
-    c = new Room("c");
-    d = new Room("d");
-    e = new Room("e");
-    f = new Room("f");
-    g = new Room("g");
-    h = new Room("h");
-    i = new Room("i");
-    j = new Room("j");
+    a = new Room("Chamber",0);
+    b = new Room("Dungeon",1);
+    c = new Room("Storage Room",2);
+    d = new Room("Prison",3);
+    e = new Room("Library",4);
+    f = new Room("Barbican",5);
+    g = new Room("Kitchen",6);
+    h = new Room("Forest",7);
+    i = new Room("Courtyard",8);
+    j = new Room("Throne",9);
 
     a->addItem(new Item("MogulKahn", 126, 20));
     b->addItem(new Item("Nessaj", 115, 23));
@@ -148,15 +162,15 @@ void MainWindow::createRooms()  {
 
 //             (N, E, S, W)
     a->setExits(f, b, d, c);
-    b->setExits(NULL, j, NULL, a);
+    b->setExits(NULL, NULL, NULL, a);
     c->setExits(NULL, a, NULL, NULL);
     d->setExits(a, e, NULL, i);
     e->setExits(NULL, NULL, NULL, d);
-    f->setExits(NULL, g, a, h);
+    f->setExits(j, g, a, h);
     g->setExits(NULL, NULL, NULL, f);
     h->setExits(NULL, f, NULL, NULL);
     i->setExits(NULL, d, NULL, NULL);
-    j->setExits(NULL, NULL, NULL, b);
+    j->setExits(NULL, NULL, f, NULL);
 
     room[0] = a;
     room[1] = b;
@@ -177,24 +191,20 @@ void MainWindow::createRooms()  {
 }
 
 void MainWindow::printWelcome() {
-    ui->textEdit->append("Welcome to Zork world!");
+    ui->textEdit->append("Welcome to Zork world!\n");
     QString qstr = QString::fromStdString(currentRoom->longDescription());
     ui->textEdit->append(qstr);
-}
-
-
-void MainWindow::on_pushButton_walk_clicked()
-{
-    QPixmap pixmap(ic.NextImage());
+    QPixmap pixmap(ic.ChangeImage(currentRoom->getIndex()));
     ui->label->setPixmap(pixmap);
     ui->label->setScaledContents(true);
     ui->label->show();
 }
 
+
 void MainWindow::paintEvent(QPaintEvent *){
     QPainter painter(this);
     QPixmap pix;
-    pix.load(":/Hero/Image/background.png");
+    pix.load(":/Background/Image/background.png");
     painter.drawPixmap(0,0,this->width(),this->height(),pix);
 
 }
@@ -212,7 +222,6 @@ void MainWindow::on_pushButton_wordle_clicked()
 
 }
 
-
 // BOSS
 void MainWindow::on_pushButton_boss_clicked()
 {
@@ -225,10 +234,7 @@ void MainWindow::on_pushButton_boss_clicked()
     }
 }
 
-//exit
-
-
-
+// Exit
 void MainWindow::on_actionExit_triggered()
 {
     QApplication::quit();

@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QWidget>
 #include <QMainWindow>
 #include <QPushButton>
@@ -9,7 +8,6 @@
 #include "Character.h"
 #include <string>
 #include <QString>
-
 
 #include "wordle.h"
 #include "Room.h"
@@ -48,8 +46,6 @@ private slots:
     void on_pushButton_wordle_clicked();
 
     void on_pushButton_boss_clicked();
-
-    void on_pushButton_walk_clicked();
 
     void on_pushButton_map_clicked();
 
