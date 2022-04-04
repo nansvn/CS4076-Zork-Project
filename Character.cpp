@@ -7,18 +7,18 @@ Character::Character(string description) {
 
     character_ptr = this;
 }
-void Character::addItem(Item &item) {
-    itemsInCharacter.push_back(item);
+void Character::addObject(Object &item) {
+    ObjectOfCharacter.push_back(item);
 }
-void Character::addItem(Item *item) {
-    itemsInCharacter.push_back(*item);
+void Character::addObject(Object *item) {
+    ObjectOfCharacter.push_back(*item);
     delete item;
 }
 
 string Character::longDescription()
 {
     string ret;
-    for (vector<Item>::iterator i = itemsInCharacter.begin(); i != itemsInCharacter.end(); i++)
+    for (vector<Object>::iterator i = ObjectOfCharacter.begin(); i != ObjectOfCharacter.end(); i++)
         ret += (*i).getShortDescription() + "\n" + (*i).getOtherInfo() + "\n";
     return ret;
 }

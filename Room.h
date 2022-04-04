@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "item.h"
+#include "Object.h"
 using namespace std;
 using std::vector;
 
@@ -18,19 +18,19 @@ private:
     string detail;
 
 public:
-    vector <Item> itemsInRoom;
+    vector <Object> bossInRoom;
     int getIndex();
     int numberOfItems();
     Room();
     Room(string description, int index);
     Room(string description, int index, string detail);
-    Room(const Room &room);    /*Deep Copy Constructor*/
+    Room(const Room &room);    /*Shallow Copy Constructor*/
 	void setExits(Room *north, Room *east, Room *south, Room *west);
     string shortDescription();
     string longDescription();
     string location();
     Room* nextRoom(string direction);
-    void addItem(Item *inItem);
+    void addItem(Object *inItem);
     string displayItem();
     int isItemInRoom(string instring);
     void removeItemFromRoom(int location);

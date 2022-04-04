@@ -11,11 +11,10 @@
 
 #include "wordle.h"
 #include "Room.h"
-#include "item.h"
+#include "Object.h"
 #include "Character.h"
 #include "bossmode.h"
 #include "imageschange.h"
-
 using namespace std;
 
 namespace Ui {
@@ -56,9 +55,8 @@ private:
     BossMode bossMode;
     void switch_BossMode();
 
-
     Room *currentRoom;
-    Room *room[100];
+    Room *room[10];
     Character *XiaoMing;
     void createRooms();
     void printWelcome();

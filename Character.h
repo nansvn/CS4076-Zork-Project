@@ -1,11 +1,10 @@
 #ifndef CHARACTER_H_
 #define CHARACTER_H_
 
-#include "item.h"
+#include "Object.h"
 #include <string>
-
-using namespace std;
 #include <vector>
+using namespace std;
 using std::vector;
 
 
@@ -13,10 +12,9 @@ class Character {
 private:
 	string description;
 public:
-    void addItem(Item &item);
-    void addItem(Item *item);
-
-    vector <Item> itemsInCharacter;
+    void addObject(Object &item);
+    void addObject(Object *item);
+    vector <Object> ObjectOfCharacter;
     virtual string inspire();
 
 public:

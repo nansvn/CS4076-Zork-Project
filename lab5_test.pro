@@ -25,10 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Entourage.cpp \
+    Object.cpp \
     main.cpp \
     mainwindow.cpp \
     Character.cpp \
-    item.cpp \
     Room.cpp \
     bossmode.cpp \
     gameover.cpp \
@@ -37,9 +37,9 @@ SOURCES += \
 
 HEADERS += \
     Entourage.h \
+    Object.h \
     mainwindow.h \
     Character.h \
-    item.h \
     Room.h \
     bossmode.h \
     gameover.h \

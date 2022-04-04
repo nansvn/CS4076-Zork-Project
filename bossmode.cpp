@@ -35,9 +35,9 @@ BossMode::BossMode(QWidget *parent) :
     connect(gameover, SIGNAL(BossDeath()), this, SLOT(GameWon()));
     connect(gameover, SIGNAL(PlayerDeath()), this, SLOT(GameLost()));
 
-    vector<Item>::iterator j = currentRoom->itemsInRoom.begin();
-    ui->progressBar_BossHealth->setMaximum((*j).health);
-    ui->progressBar_BossHealth->setValue((*j).health);
+    vector<Object>::iterator boss = currentRoom->bossInRoom.begin();
+    ui->progressBar_BossHealth->setMaximum((*boss).health);
+    ui->progressBar_BossHealth->setValue((*boss).health);
     double perc_bosshealth = (ui->progressBar_BossHealth->value() - ui->progressBar_BossHealth->minimum()) * 100.0
                         / (ui->progressBar_BossHealth->maximum() - ui->progressBar_BossHealth->minimum());
     ui->progressBar_BossHealth->setFormat(tr("Boss Health : %1%").arg(QString::number(perc_bosshealth, 'f', 1)));
@@ -93,8 +93,8 @@ void BossMode::on_AttackButton_clicked()
 
     if(isover == true)
     {
-        QMessageBox::about(this,"You won!!","You have killed all your enemies, You are the hero of the country! ");
-        QMessageBox::StandardButton reply=QMessageBox::question(this,"You won!!","Congrats!Do you want to replay the game?",
+        QMessageBox::about(this,"You won!!","You have killed all your enemies, you are the hero of the country! ");
+        QMessageBox::StandardButton reply=QMessageBox::question(this,"You won!!","Congrats! Do you want to replay the game?",
                                QMessageBox::Yes|QMessageBox::No);
         if(reply==QMessageBox::Yes){
             QProcess process(this);
@@ -107,33 +107,33 @@ void BossMode::on_AttackButton_clicked()
     else
     {
         ui->textEdit->append("\nThe monster looks angry. It rushes towards you and attacks first.");
-        vector<Item>::iterator i = XiaoMing->itemsInCharacter.begin();
-        vector<Item>::iterator j = currentRoom->itemsInRoom.begin();
-        std::string PlayerHealth_str = std::to_string((*i).health);
+        vector<Object>::iterator player = XiaoMing->ObjectOfCharacter.begin();
+        vector<Object>::iterator boss = currentRoom->bossInRoom.begin();
+        std::string PlayerHealth_str = std::to_string((*player).health);
         QString PlayerHealth_qstr = QString::fromStdString(PlayerHealth_str);
-        std::string PlayerStamina_str = std::to_string((*i).stamina);
+        std::string PlayerStamina_str = std::to_string((*player).stamina);
         QString PlayerStamina_qstr = QString::fromStdString(PlayerStamina_str);
-        std::string BossHealth_str = std::to_string((*j).health);
+        std::string BossHealth_str = std::to_string((*boss).health);
         QString BossHealth_qstr = QString::fromStdString(BossHealth_str);
 
-        if((*i).stamina - 20 < 0)
+        if((*player).stamina - 20 < 0)
         {
-            (*i).health -= (*j).attack;
-            if((*i).health < 0)
-                (*i).health = 0;
+            (*player).health -= (*boss).attack;
+            if((*player).health < 0)
+                (*player).health = 0;
 
-            std::string PlayerHealth_str=std::to_string((*i).health);
+            std::string PlayerHealth_str=std::to_string((*player).health);
             QString PlayerHealth_qstr=QString::fromStdString(PlayerHealth_str);
             ui->textEdit->append("\nPlayer Health: " + PlayerHealth_qstr);
             ui->textEdit->append("Player Stamina: " + PlayerStamina_qstr);
 
-            ui->progressBar_PlayerHealth->setValue((*i).health);
+            ui->progressBar_PlayerHealth->setValue((*player).health);
             double perc_playerhealth = (ui->progressBar_PlayerHealth->value() - ui->progressBar_PlayerHealth->minimum()) * 100.0
                                 / (ui->progressBar_PlayerHealth->maximum() - ui->progressBar_PlayerHealth->minimum()); // 百分比计算公式
             ui->progressBar_PlayerHealth->setFormat(tr("Player Health : %1%").arg(QString::number(perc_playerhealth, 'f', 1)));
             ui->progressBar_PlayerHealth->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
-            if((*i).health == 0)
+            if((*player).health == 0)
             {
                 emit this->GameLost();
                 isover = true;
@@ -145,14 +145,14 @@ void BossMode::on_AttackButton_clicked()
             {
                 ui->textEdit->append("\nYou successfully dodged the attack!");
                 ui->textEdit->append("Your stamina has decreased accordingly\n");
-                (*i).stamina -= 20;
+                (*player).stamina -= 20;
 
-                std::string PlayerStamina_str=std::to_string((*i).stamina);
+                std::string PlayerStamina_str=std::to_string((*player).stamina);
                 QString PlayerStamina_qstr=QString::fromStdString(PlayerStamina_str);
                 ui->textEdit->append("\nPlayer Health: " + PlayerHealth_qstr);
                 ui->textEdit->append("Player Stamina: " + PlayerStamina_qstr);
 
-                ui->progressBar_PlayerStamina->setValue((*i).stamina);
+                ui->progressBar_PlayerStamina->setValue((*player).stamina);
                 double perc_playerstamina = (ui->progressBar_PlayerStamina->value() - ui->progressBar_PlayerStamina->minimum()) * 100.0
                                     / (ui->progressBar_PlayerStamina->maximum() - ui->progressBar_PlayerStamina->minimum()); // 百分比计算公式
                 ui->progressBar_PlayerStamina->setFormat(tr("Player Stamina : %1%").arg(QString::number(perc_playerstamina, 'f', 1)));
@@ -161,23 +161,23 @@ void BossMode::on_AttackButton_clicked()
             else
             {
                 ui->textEdit->append("\nYou fail to dodge and are hit by the monster. Your health decreased! \n");
-                (*i).health -= (*j).attack;
-                if((*i).health < 0)
-                    (*i).health = 0;
+                (*player).health -= (*boss).attack;
+                if((*player).health < 0)
+                    (*player).health = 0;
 
-                std::string PlayerHealth_str=std::to_string((*i).health);
+                std::string PlayerHealth_str=std::to_string((*player).health);
                 QString PlayerHealth_qstr=QString::fromStdString(PlayerHealth_str);
                 ui->textEdit->append("Player Health: " + PlayerHealth_qstr);
                 ui->textEdit->append("Player Stamina: " + PlayerStamina_qstr);
 
-                ui->progressBar_PlayerHealth->setValue((*i).health);
+                ui->progressBar_PlayerHealth->setValue((*player).health);
                 double perc_playerhealth = (ui->progressBar_PlayerHealth->value() - ui->progressBar_PlayerHealth->minimum()) * 100.0
                                     / (ui->progressBar_PlayerHealth->maximum() - ui->progressBar_PlayerHealth->minimum()); // 百分比计算公式
 
                 ui->progressBar_PlayerHealth->setFormat(tr("Player Health : %1%").arg(QString::number(perc_playerhealth, 'f', 1)));
                 ui->progressBar_PlayerHealth->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
-                if((*i).health == 0)
+                if((*player).health == 0)
                 {
                     emit this->GameLost();
                     isover = true;
@@ -198,28 +198,27 @@ void BossMode::on_AttackButton_clicked()
         {
             ui->textEdit->append("\nYour attack hits the monster successfully.");
             ui->textEdit->append("The monster is unsteady on his feet.");
-            (*j).health -= (*i).attack;
-            if((*j).health < 0)
-                (*j).health = 0;
+            (*boss).health -= (*player).attack;
+            if((*boss).health < 0)
+                (*boss).health = 0;
 
-            std::string BossHealth_str=std::to_string((*j).health);
+            std::string BossHealth_str=std::to_string((*boss).health);
             QString BossHealth_qstr=QString::fromStdString(BossHealth_str);
             ui->textEdit->append("Monster Health: " + BossHealth_qstr);
 
-            ui->progressBar_BossHealth->setValue((*j).health);
+            ui->progressBar_BossHealth->setValue((*boss).health);
             double perc_bosshealth = (ui->progressBar_BossHealth->value() - ui->progressBar_BossHealth->minimum()) * 100.0
                                 / (ui->progressBar_BossHealth->maximum() - ui->progressBar_BossHealth->minimum()); // 百分比计算公式
             ui->progressBar_BossHealth->setFormat(tr("Boss Health : %1%").arg(QString::number(perc_bosshealth, 'f', 1)));
             ui->progressBar_BossHealth->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
-            if((*j).health == 0)
+            if((*boss).health == 0)
             {
                 emit this->GameWon();
                 if(flag == 1)
                     isover = true;
                 else
                     isover=false;
-                ui->AttackButton->setVisible(false);
             }
         }
         }
@@ -242,16 +241,16 @@ void BossMode::createRooms()  {
     i = new Room("Courtyard",8);
     j = new Room("Throne",9);
 
-    a->addItem(new Item("MogulKahn", 126, 20));
-    b->addItem(new Item("Nessaj", 115, 43));
-    c->addItem(new Item("Lucifer", 139, 15));
-    d->addItem(new Item("N'aix", 128, 20));
-    e->addItem(new Item("Abaddon", 142, 37));
-    f->addItem(new Item("Banehallow", 190, 13));
-    g->addItem(new Item("Balanar", 132, 19));
-    h->addItem(new Item("Azgalor", 135, 19));
-    i->addItem(new Item("Pudge", 185, 14));
-    j->addItem(new Item("Slardar", 125, 21));
+    a->addItem(new Object("MogulKahn", 126, 20));
+    b->addItem(new Object("Nessaj", 115, 43));
+    c->addItem(new Object("Lucifer", 139, 15));
+    d->addItem(new Object("N'aix", 128, 20));
+    e->addItem(new Object("Abaddon", 142, 37));
+    f->addItem(new Object("Banehallow", 190, 13));
+    g->addItem(new Object("Balanar", 132, 19));
+    h->addItem(new Object("Azgalor", 135, 19));
+    i->addItem(new Object("Pudge", 185, 14));
+    j->addItem(new Object("Slardar", 125, 21));
 
 //             (N, E, S, W)
     a->setExits(f, b, d, c);
@@ -280,10 +279,10 @@ void BossMode::createRooms()  {
     currentRoom = a;
 
     Parker = new Entourage("Goblin");
-    Parker->addItem(new Item("Goblin", 35, 0, 10));
+    Parker->addObject(new Object("Goblin", 35, 0, 10));
 
-    XiaoMing = new Character("XiaoMing");
-    XiaoMing->addItem(new Item("Player", 1000+Parker->itemsInCharacter.at(0).health, 1000, 50+Parker->itemsInCharacter.at(0).attack));
+    XiaoMing = new Character("Player");
+    XiaoMing->addObject(new Object("Player", 1000+Parker->ObjectOfCharacter.at(0).health, 1000, 50+Parker->ObjectOfCharacter.at(0).attack));
 
 }
 
@@ -313,9 +312,9 @@ void BossMode::on_pushButton_clicked(){
     num = rand() % 10;
     currentRoom=room[num];
 
-    vector<Item>::iterator j = currentRoom->itemsInRoom.begin();
-    ui->progressBar_BossHealth->setMaximum((*j).health);
-    ui->progressBar_BossHealth->setValue((*j).health);
+    vector<Object>::iterator boss = currentRoom->bossInRoom.begin();
+    ui->progressBar_BossHealth->setMaximum((*boss).health);
+    ui->progressBar_BossHealth->setValue((*boss).health);
     double perc_bosshealth = (ui->progressBar_BossHealth->value() - ui->progressBar_BossHealth->minimum()) * 100.0
                         / (ui->progressBar_BossHealth->maximum() - ui->progressBar_BossHealth->minimum());
 
@@ -326,17 +325,14 @@ void BossMode::on_pushButton_clicked(){
     if(Flag[num]==0){
         currentRoom = room[num];
         Flag[num]=1;
-        ui->textEdit->append("\nYou move to another room. Demon is sleeping here.");
-        ui->AttackButton->setVisible(true);
+        ui->textEdit->append("\nYou move to somewhere else. Demon is sleeping here.");
         QPixmap boss(ic.NextImage2());
         ui->label->setPixmap(boss);
         ui->label->setScaledContents(true);
         ui->label->show();
         }
     else{
-        ui->textEdit->append("\nThe room is silent and demon is dead, only dust dancing in the air.");
-        ui->textEdit->append("Keep searching. Your mission is not complete yet. \n");
-        ui->AttackButton->setVisible(false);
+        ui->textEdit->append("\nThe room is silent and demon is dead.");
     }
 }
 

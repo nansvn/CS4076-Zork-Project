@@ -9,7 +9,6 @@ class Entourage : public Character
 {
 public:
     Entourage(string des);
-
     virtual string inspire();
 };
 

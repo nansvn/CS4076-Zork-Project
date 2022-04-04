@@ -149,16 +149,16 @@ void MainWindow::createRooms()  {
     i = new Room("Courtyard",8);
     j = new Room("Throne",9);
 
-    a->addItem(new Item("MogulKahn", 126, 20));
-    b->addItem(new Item("Nessaj", 115, 23));
-    c->addItem(new Item("Lucifer", 139, 15));
-    d->addItem(new Item("N'aix", 128, 20));
-    e->addItem(new Item("Abaddon", 142, 17));
-    f->addItem(new Item("Banehallow", 190, 13));
-    g->addItem(new Item("Balanar", 132, 19));
-    h->addItem(new Item("Azgalor", 135, 19));
-    i->addItem(new Item("Pudge", 185, 14));
-    j->addItem(new Item("Slardar", 125, 21));
+    a->addItem(new Object("MogulKahn", 126, 20));
+    b->addItem(new Object("Nessaj", 115, 23));
+    c->addItem(new Object("Lucifer", 139, 15));
+    d->addItem(new Object("N'aix", 128, 20));
+    e->addItem(new Object("Abaddon", 142, 17));
+    f->addItem(new Object("Banehallow", 190, 13));
+    g->addItem(new Object("Balanar", 132, 19));
+    h->addItem(new Object("Azgalor", 135, 19));
+    i->addItem(new Object("Pudge", 185, 14));
+    j->addItem(new Object("Slardar", 125, 21));
 
 //             (N, E, S, W)
     a->setExits(f, b, d, c);
@@ -186,7 +186,7 @@ void MainWindow::createRooms()  {
     currentRoom = a;
 
     XiaoMing = new Character("XiaoMing");
-    XiaoMing->addItem(new Item("Player", 1000, 1000, 50));
+    XiaoMing->addObject(new Object("Player", 1000, 1000, 50));
 
 }
 

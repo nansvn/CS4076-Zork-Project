@@ -2,12 +2,11 @@
 #define BOSSMODE_H
 
 #include <QWidget>
-
 #include <string>
 #include <QString>
 
 #include "Room.h"
-#include "item.h"
+#include "Object.h"
 #include "Character.h"
 #include "gameover.h"
 #include "imageschange.h"
@@ -29,24 +28,22 @@ public:
     int Flag[10]={0};
     ~BossMode();
 
-
 private slots:
     void on_AttackButton_clicked();
+    void on_pushButton_clicked();
     void GameWon();
     void GameLost();
-    void on_pushButton_clicked();
 
 private:
     Ui::BossMode *ui;
-
+    bool isover = false;
+    void createRooms();
     Room *currentRoom;
     Room *room[10];
     Character *XiaoMing;
     Character *Parker;
-    void createRooms();
-
     GameOver *gameover;
-    bool isover = false;
+
 };
 
 #endif // BOSSMODE_H

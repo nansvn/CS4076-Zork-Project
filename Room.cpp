@@ -20,7 +20,7 @@ Room::Room(string description,int index, string detail) {
     room_ptr = this;
 }
 
-/*Deep Copy Constructor*/
+/*Shallow Copy Constructor*/
 Room::Room(const Room &room){
     description = room.description;
     index = room.index;
@@ -69,20 +69,20 @@ Room* Room::nextRoom(string direction) {
     return next->second;
 }
 
-void Room::addItem(Item *inItem) {
-    itemsInRoom.push_back(*inItem);
+void Room::addItem(Object *inItem) {
+    bossInRoom.push_back(*inItem);
 }
 
 string Room::displayItem() {
     string tempstring = "A demon has taken over the room";
-    int sizeItems = (itemsInRoom.size());
-    if (itemsInRoom.size() < 1) {
+    int sizeItems = (bossInRoom.size());
+    if (bossInRoom.size() < 1) {
         tempstring = "A quite room.";
         }
-    else if (itemsInRoom.size() > 0) {
+    else if (bossInRoom.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            tempstring = tempstring + "\n    Name: " +itemsInRoom[x].getShortDescription() + "\n" + itemsInRoom[x].getOtherInfo();
+            tempstring = tempstring + "\n    Name: " +bossInRoom[x].getShortDescription() + "\n" + bossInRoom[x].getOtherInfo();
             x++;
             }
         }
@@ -90,21 +90,21 @@ string Room::displayItem() {
     }
 
 int Room::numberOfItems() {
-    return itemsInRoom.size();
+    return bossInRoom.size();
 }
 
 int Room::isItemInRoom(string instring)
 {
-    int sizeItems = (itemsInRoom.size());
-    if (itemsInRoom.size() < 1) {
+    int sizeItems = (bossInRoom.size());
+    if (bossInRoom.size() < 1) {
         return -1;
         }
-    else if (itemsInRoom.size() > 0) {
+    else if (bossInRoom.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            int tempFlag = instring.compare( itemsInRoom[x].getShortDescription());
+            int tempFlag = instring.compare( bossInRoom[x].getShortDescription());
             if (tempFlag == 0) {
-                itemsInRoom.erase(itemsInRoom.begin()+x);
+                bossInRoom.erase(bossInRoom.begin()+x);
                 return x;
             }
             x++;
