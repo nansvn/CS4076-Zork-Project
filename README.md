@@ -4,48 +4,44 @@ A GUI based version of Zork game using C++ and Qt based on the text version.
 
 # C++ Assessment Criteria:
 
-Virtual functions
+Virtual functions√
 
 template classes
 
 Multiple inheritance
 
-namespaces
+namespaces√
 
 Programmer defined exceptions
 
-Unions
-
-Operator overloading
+Operator overloading√
 
 Abstract classes
 
-Copy constructors (deep,shallow copy)
+Copy constructors (deep,shallow copy)√
 
-Bit structures
+Bit structures√
 
 Advanced pre-processor directives
-
-C++ Object Construction Sequence
 
 Initializer List
 
 C++ References
 
-Pointers
+Pointers√
 
-Inheritance
+Inheritance√
 
-Destructors
+Destructors√
 
 Memory management
 
 Header files (inclusion guards)
 
-Arrays and pointers
+Arrays and pointers√
 
-Friendship
+Friendship√
 
-Global variables
+Global variables√
 
-Private, Public, Protected
+Private, Public, Protected√
