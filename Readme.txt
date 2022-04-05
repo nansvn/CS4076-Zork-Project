@@ -1,3 +1,7 @@
+
+=============================
+		Assessment Criteria
+=============================
 [Wordle]
 Wordle class
 
