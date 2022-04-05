@@ -10,45 +10,46 @@ Room class: line 25
 Entourage class
 Character class
 
-//[Multiple inheritance]
+[Multiple inheritance]
 Object - Character - Entourage
 
 [Bit structures]
-Object.h line 19~21
+Object.h  line 19~21
 
 [Destructors]
-bossmode.cpp line 84~89
+bossmode.cpp  line 84~89
 
 [Private, Public, Protected]
+bossmode.h
 
 [Namespaces]
-mainwindow.h line 21~23
+mainwindow.h  line 21~23
+wordle.h  line 6~8
 
 [Friendship]
-Object.h line  11
-Object.cpp line  59~66
+Object.h  line 11
+Object.cpp  line 59~66
 
 [Operator overloading]
-Object.h line  11
-Object.cpp line  59~66
+Object.h  line 11
+Object.cpp  line 59~66
 
 [Template]
-
-[Programmer defined exceptions]
-
-
-
-[Abstract classes]
+Object class
 
 [Initializer List]
-
-[C++ References]
+Object.cpp  line 8~23
 
 [Pointers]
-
-[Memory management]
+bossmode class(Character, Room, Gameover)
+mainwindow class(Character, Room)
+imageschange class(Image path char array)
 
 [Header files (inclusion guards)]
+Bossmode class
+Character class
+mainwindow class
+Room class
 
 [Global variables]
-
+wordle.cpp  line 11~13
