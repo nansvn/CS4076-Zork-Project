@@ -2,7 +2,7 @@
 A GUI based version of Zork game using C++ and Qt based on the text version.
 
 
-### <p align="center"> C++ Assessment Criteria </p>
+### C++ Assessment Criteria
 
 Virtual functions√
 
