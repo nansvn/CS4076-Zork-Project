@@ -10,6 +10,8 @@ Virtual functions √
 
 Multiple inheritance √
 
+Template √
+
 namespaces √
 
 Operator overloading √
@@ -18,11 +20,9 @@ Copy constructors (deep,shallow copy) √
 
 Bit structures √
 
-Advanced pre-processor directives √
-
 Initializer List √
 
-Pointers √
+C++ References√
 
 Inheritance √
 
