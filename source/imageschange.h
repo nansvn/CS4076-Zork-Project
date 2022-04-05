@@ -9,13 +9,11 @@ class Images_Change
 {
 
 public:
-
     Images_Change();
-
     char *NextImage();
     char *NextImage2();
     char *ChangeImage(int i);
-    /*图片的路径*/
+    //Image path
 
     char* images[10] = {":/Background/Image/1.jpg",":/Background/Image/2.jpg",":/Background/Image/3.jpg",
                         ":/Background/Image/4.jpg",":/Background/Image/5.jpg",":/Background/Image/6.jpg",

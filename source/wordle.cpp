@@ -7,10 +7,11 @@
 #include <qprocess.h>
 #include <qmessagebox.h>
 using namespace std;
-#define MAX_SIZE 1
 
+#define MAX_SIZE 1
 QString qwords;
 char letters[5];
+
 
 wordle::wordle(QWidget *parent)
     : QWidget(parent)
@@ -74,7 +75,6 @@ void wordle::on_textEdit_textChanged()
             cursor.clearSelection();
         }
         cursor.deletePreviousChar();
-        //设置当前的光标为更改后的光标
         ui->textEdit->setTextCursor(cursor);
     }
 }

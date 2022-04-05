@@ -4,7 +4,7 @@
 #include "Character.h"
 #include <string>
 
-/*inheritance*/
+/*Inheritance*/
 class Entourage : public Character
 {
 public:

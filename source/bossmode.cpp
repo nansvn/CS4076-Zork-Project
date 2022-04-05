@@ -8,7 +8,6 @@
 #include <QMessageBox>
 #include <array>
 
-/*static class members*/
 static int num;
 
 BossMode::BossMode(QWidget *parent) :
@@ -79,6 +78,7 @@ BossMode::BossMode(QWidget *parent) :
 BossMode::~BossMode()
 {
     delete ui;
+    delete currentRoom;
 }
 
 void BossMode::on_AttackButton_clicked()

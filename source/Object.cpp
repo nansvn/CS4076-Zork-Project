@@ -1,13 +1,19 @@
 #include "Object.h"
 
+Object::Object(string inDescription) {
+    description = inDescription;
+}
 
-Object::Object(string indescription, int inhealth, int inattack) {
+Object::Object(string indescription, int inhealth, int inattack)
+    : description("Unknown object"),health(0),attack(0)
+{
     description = indescription;
     setHealth(inhealth);
     setAttack(inattack);
 }
 
 Object::Object(string indescription, int inhealth, int instamina, int inattack)
+    : description("Unknown object"),health(0),stamina(0),attack(0)
 {
     description = indescription;
     setHealth(inhealth);
@@ -15,23 +21,34 @@ Object::Object(string indescription, int inhealth, int instamina, int inattack)
     setAttack(inattack);
 }
 
-Object::Object(string inDescription) {
-	description = inDescription;
+int Object::getHealth() const
+{
+    return health;
+}
+int Object::getStamina() const
+{
+    return stamina;
 }
 
-void Object::setHealth(int inhealth)
+int Object::getAttack() const
 {
-    health = inhealth;
+    return attack;
 }
 
-void Object::setStamina(int instamina)
-{
-    stamina = instamina;
+
+template<typename T>
+void Object::setHealth(const T& inhealth){
+        this->health = inhealth;
 }
 
-void Object::setAttack(int inattack)
-{
-    attack = inattack;
+template<typename T>
+void Object::setStamina(const T& instamina){
+        this->stamina = instamina;
+}
+
+template<typename T>
+void Object::setAttack(const T& inattack){
+        this->attack = inattack;
 }
 
 
@@ -40,10 +57,6 @@ string Object::getShortDescription()
 	return description;
 }
 
-string Object::getLongDescription()
-{
-	return " item(s), " + description + ".\n";
-}
 
 string Object::getOtherInfo()
 {

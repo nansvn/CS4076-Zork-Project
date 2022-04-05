@@ -8,7 +8,6 @@
 #include "Character.h"
 #include <string>
 #include <QString>
-
 #include "wordle.h"
 #include "Room.h"
 #include "Object.h"
@@ -17,9 +16,7 @@
 #include "imageschange.h"
 using namespace std;
 
-namespace Ui {
-class MainWindow;
-}
+namespace Ui {class MainWindow;}
 
 class MainWindow : public QMainWindow
 {
@@ -33,28 +30,19 @@ public:
 
 private slots:
     void on_pushButton_west_clicked();
-
     void on_pushButton_north_clicked();
-
     void on_pushButton_south_clicked();
-
     void on_pushButton_tele_clicked();
-
     void on_pushButton_east_clicked();
-
     void on_pushButton_wordle_clicked();
-
     void on_pushButton_boss_clicked();
-
     void on_pushButton_map_clicked();
-
 
 private:
     Ui::MainWindow *ui;
     wordle wordle;
     BossMode bossMode;
     void switch_BossMode();
-
     Room *currentRoom;
     Room *room[10];
     Character *XiaoMing;

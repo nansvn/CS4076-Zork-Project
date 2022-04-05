@@ -1,17 +1,14 @@
 #ifndef BOSSMODE_H
 #define BOSSMODE_H
-
 #include <QWidget>
 #include <string>
 #include <QString>
-
 #include "Room.h"
 #include "Object.h"
 #include "Character.h"
 #include "gameover.h"
 #include "imageschange.h"
 #include "Entourage.h"
-
 
 namespace Ui {
 class BossMode;
@@ -28,13 +25,7 @@ public:
     int Flag[10]={0};
     ~BossMode();
 
-private slots:
-    void on_AttackButton_clicked();
-    void on_pushButton_clicked();
-    void GameWon();
-    void GameLost();
-
-private:
+protected:
     Ui::BossMode *ui;
     bool isover = false;
     void createRooms();
@@ -44,6 +35,11 @@ private:
     Character *Parker;
     GameOver *gameover;
 
+private slots:
+    void on_AttackButton_clicked();
+    void on_pushButton_clicked();
+    void GameWon();
+    void GameLost();
 };
 
 #endif // BOSSMODE_H
