@@ -2,7 +2,7 @@
 
 Room *room_ptr;
 
-/*default parameters*/
+/*Initializer List*/
 Room::Room()
     :description{""},index{0},detail{""}
 {};

@@ -8,6 +8,8 @@ using namespace std;
 using std::vector;
 
 class Room {
+    friend class Object;
+
 private:
     string description;
     map<string, Room*> exits;

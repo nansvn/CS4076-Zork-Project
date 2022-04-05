@@ -9,7 +9,7 @@ class Entourage : public Character
 {
 public:
     Entourage(string des);
-    virtual string inspire();
+    virtual string inspire(); //virtual functions
 };
 
 #endif // ENTOURAGE_H

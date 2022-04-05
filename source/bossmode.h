@@ -10,13 +10,19 @@
 #include "imageschange.h"
 #include "Entourage.h"
 
-namespace Ui {
-class BossMode;
-}
+namespace Ui {class BossMode;}
 
 class BossMode : public QWidget
 {
     Q_OBJECT
+
+protected:
+    Ui::BossMode *ui;
+    Room *currentRoom;
+    Room *room[10];
+    Character *XiaoMing;
+    Character *Parker;
+    GameOver *gameover;
 
 public:
     explicit BossMode(QWidget *parent = 0);
@@ -24,16 +30,8 @@ public:
     Images_Change ic;
     int Flag[10]={0};
     ~BossMode();
-
-protected:
-    Ui::BossMode *ui;
     bool isover = false;
     void createRooms();
-    Room *currentRoom;
-    Room *room[10];
-    Character *XiaoMing;
-    Character *Parker;
-    GameOver *gameover;
 
 private slots:
     void on_AttackButton_clicked();

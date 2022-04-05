@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     printWelcome();
 }
 
+//destructor
 MainWindow::~MainWindow()
 {
     delete ui;

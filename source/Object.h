@@ -6,6 +6,7 @@
 using namespace std;
 
 class Object {
+    //friend && overload && reference
     friend Object operator+ (const Object &A, const Object &B);
 
 protected:
@@ -26,6 +27,8 @@ public:
     int getHealth() const;
     int getStamina() const;
     int getAttack() const;
+
+    //Template
     template <typename T>
     void setHealth(const T& inhealth);
 

@@ -5,7 +5,7 @@ Object::Object(string inDescription) {
 }
 
 Object::Object(string indescription, int inhealth, int inattack)
-    : description("Unknown object"),health(0),attack(0)
+    : description("Unknown object"),health(0),attack(0) //Initializer
 {
     description = indescription;
     setHealth(inhealth);
@@ -13,7 +13,7 @@ Object::Object(string indescription, int inhealth, int inattack)
 }
 
 Object::Object(string indescription, int inhealth, int instamina, int inattack)
-    : description("Unknown object"),health(0),stamina(0),attack(0)
+    : description("Unknown object"),health(0),stamina(0),attack(0) //Initializer
 {
     description = indescription;
     setHealth(inhealth);
@@ -35,7 +35,7 @@ int Object::getAttack() const
     return attack;
 }
 
-
+//Template
 template<typename T>
 void Object::setHealth(const T& inhealth){
         this->health = inhealth;

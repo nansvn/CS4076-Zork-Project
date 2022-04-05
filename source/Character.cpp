@@ -8,6 +8,7 @@ Character::Character(string description) : Object(description){
 void Character::addObject(Object &item) {
     ObjectOfCharacter.push_back(item);
 }
+
 void Character::addObject(Object *item) {
     ObjectOfCharacter.push_back(*item);
     delete item;

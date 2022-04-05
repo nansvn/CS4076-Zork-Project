@@ -8,9 +8,9 @@
 #include <qmessagebox.h>
 using namespace std;
 
-#define MAX_SIZE 1
-QString qwords;
-char letters[5];
+#define MAX_SIZE 1 //Macro
+QString qwords; //Global variables
+char letters[5]; //Global variables
 
 
 wordle::wordle(QWidget *parent)

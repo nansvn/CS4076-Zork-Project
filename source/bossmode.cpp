@@ -66,15 +66,17 @@ BossMode::BossMode(QWidget *parent) :
     QString qstr1 = QString::fromStdString(XiaoMing->longDescription());
     ui->textEdit->append(qstr1);
 
-    QString qstr2 = QString::fromStdString(Parker->longDescription());//follower
-        ui->textEdit->append(qstr2);
-
     QString go = QString::fromStdString(Parker->inspire());
         ui->textEdit->append(go);
+
+    QString qstr2 = QString::fromStdString(Parker->longDescription());  //use of virtual functions
+        ui->textEdit->append(qstr2);
+
+
 }
 
 
-
+//Destructor
 BossMode::~BossMode()
 {
     delete ui;
