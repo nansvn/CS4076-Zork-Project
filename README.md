@@ -6,27 +6,19 @@ A GUI based version of Zork game using C++ and Qt based on the text version.
 
 Virtual functions√
 
-template classes
-
-Multiple inheritance
+Multiple inheritance√
 
 namespaces√
 
-Programmer defined exceptions
-
 Operator overloading√
-
-Abstract classes
 
 Copy constructors (deep,shallow copy)√
 
 Bit structures√
 
-Advanced pre-processor directives
+Advanced pre-processor directives√
 
-Initializer List
-
-C++ References
+Initializer List√
 
 Pointers√
 
@@ -34,9 +26,7 @@ Inheritance√
 
 Destructors√
 
-Memory management
-
-Header files (inclusion guards)
+Header files (inclusion guards)√
 
 Arrays and pointers√
 
