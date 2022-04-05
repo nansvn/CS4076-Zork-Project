@@ -7,8 +7,7 @@ Bossmode.cpp: line 77
 Room class: line 25
 
 [Inheritance]
-Entourage class
-Character class
+Object - Entourage class - Character
 
 [Multiple inheritance]
 Object - Character - Entourage
@@ -18,9 +17,10 @@ Object.h  line 19~21
 
 [Destructors]
 bossmode.cpp  line 84~89
+mainwindow.cpp line 20~23
 
 [Private, Public, Protected]
-bossmode.h
+Object class
 
 [Namespaces]
 mainwindow.h  line 21~23
@@ -35,7 +35,7 @@ Object.h  line 11
 Object.cpp  line 59~66
 
 [Template]
-Object class
+Object class  line 27~34
 
 [Initializer List]
 Object.cpp  line 8~23
