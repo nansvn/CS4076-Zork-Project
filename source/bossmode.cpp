@@ -296,7 +296,7 @@ void BossMode::GameWon()
 
 void BossMode:: GameLost()
 {
-    QMessageBox::StandardButton reply=QMessageBox::question(this,"Game Over","Game over!Do you want to restart the game?",
+    QMessageBox::StandardButton reply=QMessageBox::question(this,"Game Over","You died! Do you want to replay the game?",
                            QMessageBox::Yes|QMessageBox::No);
     if(reply==QMessageBox::Yes){
         QProcess process(this);
