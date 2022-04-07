@@ -1,9 +1,11 @@
-## <p align="center"> CS4076-Zork-project </p>
+# <p align="center"> CS4076-Zork-project </p>
+
 A GUI based version of Zork game using C++ and Qt based on the text version.
 
 Please see readme.txt if you would like to see the implementation details
 
-### C++ Assessment Criteria
+---
+## C++ Assessment Criteria
 
 Wordle √
 
